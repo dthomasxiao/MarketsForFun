@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Weekly Markets</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#eef1f0;--surface:#fafbfa;--ink:#0f1e2d;--muted:#55636f;--line:#cfd6d8;
+  --accent:#1f3a5f;--pos:#1d7a58;--neg:#b3402f;
+  --serif:"Newsreader",Georgia,"Times New Roman",serif;
+  --sans:"Instrument Sans",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0e1720;--surface:#15212d;--ink:#e8edf0;--muted:#9aa9b5;--line:#2a3948;
+    --accent:#8db4e8;--pos:#4fc08d;--neg:#ef7a68;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0e1720;--surface:#15212d;--ink:#e8edf0;--muted:#9aa9b5;--line:#2a3948;
+  --accent:#8db4e8;--pos:#4fc08d;--neg:#ef7a68;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);font-size:1.125rem;line-height:1.6}
+a{color:var(--accent)}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{max-width:46rem;margin:0 auto;padding:0 1.25rem}
+header{padding:1.5rem 0 1rem;display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:.5rem 1.5rem;border-bottom:1px solid var(--line)}
+.brand{font-family:var(--sans);font-weight:600;font-size:1.05rem;letter-spacing:.01em;color:var(--ink);text-decoration:none}
+nav{font-family:var(--sans);font-size:.95rem;display:flex;gap:1.25rem}
+nav a{color:var(--muted);text-decoration:none}
+nav a:hover{color:var(--ink)}
+.meta{font-family:var(--sans);font-size:.9rem;color:var(--muted);margin:2.25rem 0 .5rem}
+h1{font-size:clamp(2rem,6vw,3rem);line-height:1.1;font-weight:600;margin:0 0 1.5rem;letter-spacing:-.015em}
+h2{font-size:1.5rem;font-weight:600;margin:2.75rem 0 .75rem;line-height:1.2}
+p{margin:0 0 1rem;max-width:40rem}
+.chart{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1.25rem 1.25rem 1rem;margin:1.5rem 0}
+.chart h3{font-family:var(--sans);font-size:.95rem;font-weight:600;margin:0 0 1rem}
+.row{display:grid;grid-template-columns:7.5rem 1fr 4rem;align-items:center;gap:.75rem;font-family:var(--sans);font-size:.9rem;padding:.4rem 0}
+.track{position:relative;height:1.5rem}
+.track::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:1px;background:var(--line)}
+.bar{position:absolute;top:.2rem;bottom:.2rem;border-radius:2px}
+.bar.p{left:50%;background:var(--pos)}
+.bar.n{right:50%;background:var(--neg)}
+.val{text-align:right;font-variant-numeric:tabular-nums;font-weight:600}
+.val.p{color:var(--pos)}.val.n{color:var(--neg)}
+.note{font-family:var(--sans);font-size:.82rem;color:var(--muted);margin:.75rem 0 0;max-width:none}
+table{width:100%;border-collapse:collapse;font-family:var(--sans);font-size:.92rem;margin:1rem 0}
+.scroll{overflow-x:auto}
+th,td{text-align:left;padding:.6rem .75rem .6rem 0;border-bottom:1px solid var(--line);white-space:nowrap}
+th{font-weight:600;color:var(--muted);font-size:.85rem}
+td.num{font-variant-numeric:tabular-nums}
+.proj{border-top:1px solid var(--line);padding:1.1rem 0}
+.proj:last-of-type{border-bottom:1px solid var(--line)}
+.proj h3{font-size:1.2rem;margin:0 0 .25rem;font-weight:600}
+.proj p{margin:0;color:var(--muted);font-size:1rem}
+.tag{font-family:var(--sans);font-size:.8rem;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:.1rem .6rem;margin-left:.5rem;vertical-align:middle;font-weight:400}
+footer{font-family:var(--sans);font-size:.85rem;color:var(--muted);padding:2.5rem 0 3rem;margin-top:3rem;border-top:1px solid var(--line)}
+@media (max-width:30rem){.row{grid-template-columns:5.5rem 1fr 3.5rem;gap:.5rem}body{font-size:1.05rem}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <a class="brand" href="#report">Weekly Markets</a>
+  <nav aria-label="Sections"><a href="#report">Latest report</a><a href="#projects">Projects</a></nav>
+</header>
+
+<main id="report">
+  <p class="meta">Week of November 2, 2026 · by Thomas</p>
+  <h1>Equities slid 2.3% as oil and gold pulled in opposite directions</h1>
+
+  <p>Democrats’ sweep of the midterms set the tone. Stocks first rallied 1.8% on hopes for clearer, less volatile policy, de-escalation abroad, and a possible rollback of tariffs. They then fell 4% as investors worried that lower AI spending could also limit economic output. Compounded, that leaves equities down about 2.3% on the week.</p>
+
+  <div class="chart" role="img" aria-label="Bar chart of weekly changes: equities net negative 2.3 percent, WTI crude negative 6.0, gold positive 4.1, two-year yield positive 0.4, ten-year yield negative 0.8">
+    <h3>Weekly change (%)</h3>
+    <div class="row"><span>Equities (net)</span><div class="track"><div class="bar n" style="width:18.9%"></div></div><span class="val n">−2.3</span></div>
+    <div class="row"><span>WTI crude</span><div class="track"><div class="bar n" style="width:50%"></div></div><span class="val n">−6.0</span></div>
+    <div class="row"><span>Gold</span><div class="track"><div class="bar p" style="width:34.2%"></div></div><span class="val p">+4.1</span></div>
+    <div class="row"><span>2-yr yield</span><div class="track"><div class="bar p" style="width:3.7%"></div></div><span class="val p">+0.4</span></div>
+    <div class="row"><span>10-yr yield</span><div class="track"><div class="bar n" style="width:6.75%"></div></div><span class="val n">−0.8</span></div>
+    <p class="note">Yields are shown as the percent change in the yield level (2-yr +2 bps to 4.58%, 10-yr −4 bps to 4.90%). Equities are the compounded rally and selloff.</p>
+  </div>
+
+  <h2>Data came in strong</h2>
+  <p>Every major release beat expectations, which pushed the odds of a December rate hike to 73% after the jobs report.</p>
+  <div class="scroll"><table>
+    <thead><tr><th>Indicator</th><th>Actual</th><th>Expected</th></tr></thead>
+    <tbody>
+      <tr><td>ISM Manufacturing PMI</td><td class="num">55.5</td><td class="num">54.5</td></tr>
+      <tr><td>Weekly jobless claims</td><td class="num">189k</td><td class="num">197k</td></tr>
+      <tr><td>Nonfarm payrolls</td><td class="num">165k</td><td class="num">59k</td></tr>
+      <tr><td>Unemployment rate</td><td class="num">4.1%</td><td class="num">4.2%</td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>Oil fell, gold rose</h2>
+  <p>WTI dropped 6% from $90.34 as de-escalation efforts in the Middle East and the midterm results eased supply fears. Gold gained 4.1% as falling oil lowered inflation expectations.</p>
+
+  <h2>What I’m watching</h2>
+  <p>The data points toward a tighter Fed, while oil and gold are pricing in softer inflation. If those two signals keep disagreeing, next week’s inflation data decides which one the market follows.</p>
+</main>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="proj"><h3>RTX 6.125% 2038 bond pitch<span class="tag">Draft</span></h3><p>A credit pitch built on raised guidance, a record backlog, a small outstanding size, and roll-down.</p></div>
+  <div class="proj"><h3>RTX equity pitch<span class="tag">Draft</span></h3><p>A long thesis on earnings momentum, with valuation and the risks that would change my mind.</p></div>
+  <div class="proj"><h3>ETF flow tracker<span class="tag">Planned</span></h3><p>Monthly view of which sectors are gaining and losing assets, with a read on what it signals.</p></div>
+</section>
+
+<footer>
+  <p class="note">Figures as of November 6, 2026. For education only, not investment advice. Check numbers against primary sources before relying on them.</p>
+</footer>
+</div>
+</body>
+</html>
