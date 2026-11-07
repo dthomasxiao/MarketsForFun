@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Week of Nov 1, Midterm Shakes Markets</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#eef1f0;--surface:#fafbfa;--ink:#0f1e2d;--muted:#55636f;--line:#cfd6d8;
+  --accent:#1f3a5f;--pos:#1d7a58;--neg:#b3402f;
+  --serif:"Newsreader",Georgia,"Times New Roman",serif;
+  --sans:"Instrument Sans",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0e1720;--surface:#15212d;--ink:#e8edf0;--muted:#9aa9b5;--line:#2a3948;
+    --accent:#8db4e8;--pos:#4fc08d;--neg:#ef7a68;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0e1720;--surface:#15212d;--ink:#e8edf0;--muted:#9aa9b5;--line:#2a3948;
+  --accent:#8db4e8;--pos:#4fc08d;--neg:#ef7a68;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);font-size:1.125rem;line-height:1.6}
+.wrap{max-width:46rem;margin:0 auto;padding:0 1.25rem}
+header{padding:1.5rem 0 1rem;border-bottom:1px solid var(--line)}
+.brand{font-family:var(--sans);font-weight:600;font-size:1.05rem;color:var(--ink)}
+.meta{font-family:var(--sans);font-size:.9rem;color:var(--muted);margin:2.25rem 0 .5rem}
+h1{font-size:clamp(2rem,6vw,3rem);line-height:1.1;font-weight:600;margin:0 0 1.5rem;letter-spacing:-.015em}
+p{margin:0 0 1.1rem;max-width:40rem}
+.chart{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1.25rem 1.25rem 1rem;margin:1.75rem 0}
+.chart h3{font-family:var(--sans);font-size:.95rem;font-weight:600;margin:0 0 1rem}
+.row{display:grid;grid-template-columns:7.5rem 1fr 4rem;align-items:center;gap:.75rem;font-family:var(--sans);font-size:.9rem;padding:.4rem 0}
+.track{position:relative;height:1.5rem}
+.track::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:1px;background:var(--line)}
+.bar{position:absolute;top:.2rem;bottom:.2rem;border-radius:2px}
+.bar.p{left:50%;background:var(--pos)}
+.bar.n{right:50%;background:var(--neg)}
+.val{text-align:right;font-variant-numeric:tabular-nums;font-weight:600}
+.val.p{color:var(--pos)}.val.n{color:var(--neg)}
+.note{font-family:var(--sans);font-size:.82rem;color:var(--muted);margin:.75rem 0 0;max-width:none}
+footer{font-family:var(--sans);font-size:.85rem;color:var(--muted);padding:2.5rem 0 3rem;margin-top:3rem;border-top:1px solid var(--line)}
+@media (max-width:30rem){.row{grid-template-columns:5.5rem 1fr 3.5rem;gap:.5rem}body{font-size:1.05rem}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><span class="brand">Weekly Markets</span></header>
+
+<main>
+  <p class="meta">11/3/2026</p>
+  <h1>Week of Nov 1, Midterm Shakes Markets</h1>
+
+  <p>This week, we saw a multitude of economic indicators, and shifting consensus across the market with the largest catalyst being the democrats sweep of the midterms, resulting in a 1.8% rally followed by a 4% selloff driven by the market’s expectations of clearer, less volatile policy, deescalation efforts, decreases in AI spending and potential correction of tariffs and other inflationary outcomes. This was followed by a sudden selloff as investors realized that lower AI spending could also severely limit economic output.</p>
+
+  <p>In terms of inflationary reports, we saw ISM Manufacturing PMI up 55.5 compared to 54.5 forecast, weekly jobless claims at 189k down from 197k expectations. Employment reports came in at 165k up from 59k expectations and 4.1% unemployment compared to 4.2% expectations. The 2yr and 10yr are at 4.58%(+2bps) and 4.90% (-4bps). Odds of a hike in December are now up 73% after the jobs report.</p>
+
+  <p>Oil prices WTI is down 6% this week from 90.34 driven by deescalation efforts in the middle east and the midterm results. Meanwhile, Gold is up 4.1% this week from last week, driven by falling oil and lower inflation expectations.</p>
+
+  <div class="chart" role="img" aria-label="Bar chart of weekly changes: equities net negative 2.3 percent, WTI crude negative 6.0, gold positive 4.1, two-year yield positive 0.4, ten-year yield negative 0.8">
+    <h3>Weekly change (%)</h3>
+    <div class="row"><span>Equities (net)</span><div class="track"><div class="bar n" style="width:18.9%"></div></div><span class="val n">−2.3</span></div>
+    <div class="row"><span>WTI crude</span><div class="track"><div class="bar n" style="width:50%"></div></div><span class="val n">−6.0</span></div>
+    <div class="row"><span>Gold</span><div class="track"><div class="bar p" style="width:34.2%"></div></div><span class="val p">+4.1</span></div>
+    <div class="row"><span>2-yr yield</span><div class="track"><div class="bar p" style="width:3.7%"></div></div><span class="val p">+0.4</span></div>
+    <div class="row"><span>10-yr yield</span><div class="track"><div class="bar n" style="width:6.75%"></div></div><span class="val n">−0.8</span></div>
+    <p class="note">Yields are shown as the percent change in the yield level (2-yr +2 bps to 4.58%, 10-yr −4 bps to 4.90%). Equities are the compounded rally and selloff.</p>
+  </div>
+
+  <p>Next week’s major catalysts include Tuesday’s October CPI print, Thursday’s John William’s Federal Reserve bank of NY’s speech and Friday’s PPI report.</p>
+</main>
+
+<footer>
+  <p class="note">For education only, not investment advice.</p>
+</footer>
+</div>
+</body>
+</html>
